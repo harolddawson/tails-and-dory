@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stories — Tails &amp; Dory</title>
+  <meta name="description" content="Stories, memories, and adventures with Tails and Dory." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="nav-logo" href="index.html">Tails <span>&amp;</span> Dory</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tails.html">Tails</a></li>
+        <li><a href="dory.html">Dory</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="photos.html">Photos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header style="background:var(--cream-dark); padding:var(--gap-lg) 0 var(--gap-md); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <p class="section-label">Memories &amp; moments</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.5rem);">Stories</h1>
+      <p class="text-mid italic" style="font-family:var(--font-display); font-size:1.2rem; margin-top:0.75rem; max-width:520px;">
+        The small moments that made life richer, written down before they fade.
+      </p>
+    </div>
+  </header>
+
+  <!-- FILTER TABS -->
+  <div style="background:var(--warm-white); border-bottom:1px solid var(--border); position:sticky; top:57px; z-index:50;">
+    <div class="container" style="display:flex; gap:0.25rem; padding-top:0.75rem; padding-bottom:0.75rem; overflow-x:auto;">
+      <button class="btn btn-primary filter-btn" data-filter="all"   style="padding:0.5rem 1.25rem; font-size:0.78rem;">All</button>
+      <button class="btn btn-secondary filter-btn" data-filter="tails" style="padding:0.5rem 1.25rem; font-size:0.78rem;">Tails</button>
+      <button class="btn btn-secondary filter-btn" data-filter="dory"  style="padding:0.5rem 1.25rem; font-size:0.78rem;">Dory</button>
+      <button class="btn btn-secondary filter-btn" data-filter="both"  style="padding:0.5rem 1.25rem; font-size:0.78rem;">Both</button>
+    </div>
+  </div>
+
+  <!-- STORIES LIST -->
+  <section class="section">
+    <div class="container">
+      <div class="blog-list" id="stories-list">
+
+        <!--
+        ══════════════════════════════════════════════════════
+        HOW TO ADD A NEW STORY:
+        Copy one of the <article> blocks below and fill in:
+          - data-dog="tails" | "dory" | "both"
+          - The date
+          - The tag span (class="blog-tag--tails/--dory/--both")
+          - The title and href (link to a separate story HTML file, or use # for now)
+          - The excerpt paragraph
+          - The photo src (or leave the placeholder div)
+        ══════════════════════════════════════════════════════
+        -->
+
+        <!-- SAMPLE STORY 1 -->
+        <article class="blog-card fade-in" data-dog="tails">
+          <div class="blog-card-photo photo-placeholder" style="min-height:180px; display:flex; align-items:center; justify-content:center;">
+            Add a photo
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-date">Add a date</p>
+            <span class="blog-tag blog-tag--tails">Tails</span>
+            <h3><a href="#">Your first story title</a></h3>
+            <p class="text-mid">Add an excerpt here — a sentence or two that makes someone want to read the full story.</p>
+            <a href="#" class="btn btn-tails" style="margin-top:1rem; padding:0.6rem 1.25rem; font-size:0.8rem;">Read →</a>
+          </div>
+        </article>
+
+        <!-- SAMPLE STORY 2 -->
+        <article class="blog-card fade-in" data-dog="dory">
+          <div class="blog-card-photo photo-placeholder" style="min-height:180px; display:flex; align-items:center; justify-content:center;">
+            Add a photo
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-date">Add a date</p>
+            <span class="blog-tag blog-tag--dory">Dory</span>
+            <h3><a href="#">Your second story title</a></h3>
+            <p class="text-mid">Add an excerpt here — a sentence or two that makes someone want to read the full story.</p>
+            <a href="#" class="btn btn-primary" style="margin-top:1rem; padding:0.6rem 1.25rem; font-size:0.8rem;">Read →</a>
+          </div>
+        </article>
+
+        <!-- SAMPLE STORY 3 -->
+        <article class="blog-card fade-in" data-dog="both">
+          <div class="blog-card-photo photo-placeholder" style="min-height:180px; display:flex; align-items:center; justify-content:center;">
+            Add a photo
+          </div>
+          <div class="blog-card-body">
+            <p class="blog-card-date">Add a date</p>
+            <span class="blog-tag blog-tag--both">Tails &amp; Dory</span>
+            <h3><a href="#">A story about both of them</a></h3>
+            <p class="text-mid">Add an excerpt here.</p>
+            <a href="#" class="btn btn-secondary" style="margin-top:1rem; padding:0.6rem 1.25rem; font-size:0.8rem;">Read →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Tails &amp; Dory &mdash; A Pomeranian life, remembered and lived.</p>
+    <p>Tails: July 9, 2011 – October 22, 2024 &nbsp;·&nbsp; Dory: born October 16, 2015</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Filter tabs
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const stories    = document.querySelectorAll('#stories-list article');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('btn-primary');
+          b.classList.add('btn-secondary');
+        });
+        btn.classList.remove('btn-secondary');
+        btn.classList.add('btn-primary');
+
+        const f = btn.dataset.filter;
+        stories.forEach(s => {
+          s.style.display = (f === 'all' || s.dataset.dog === f) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

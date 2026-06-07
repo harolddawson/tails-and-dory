@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tails &amp; Dory — Life with Pomeranians</title>
+  <meta name="description" content="The story of Tails and Dory, two Pomeranians who make every day better." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="nav-logo" href="index.html">Tails <span>&amp;</span> Dory</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tails.html">Tails</a></li>
+        <li><a href="dory.html">Dory</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="photos.html">Photos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <p class="hero-eyebrow">Life with Pomeranians</p>
+      <h1>Tails &amp; Dory</h1>
+      <p class="hero-sub">Two small dogs. Enormous personalities. Stories worth keeping.</p>
+      <div class="hero-cta">
+        <a href="tails.html" class="btn btn-tails">Meet Tails</a>
+        <a href="dory.html" class="btn btn-primary">Meet Dory</a>
+        <a href="stories.html" class="btn btn-secondary">Read Stories</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MEET THE DOGS -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">The Poms</p>
+      <h2 class="fade-in">Meet the family</h2>
+      <p class="fade-in" style="max-width:580px; margin-bottom:var(--gap-md); color:var(--text-mid);">
+        Two Pomeranians, one home, endless joy. This site is their story — in photos,
+        memories, and the small moments that made life richer.
+      </p>
+
+      <div class="dog-cards">
+
+        <!-- TAILS CARD -->
+        <div class="dog-card dog-card--tails fade-in">
+          <div class="dog-card-photo">
+            <!-- Replace src with a real photo path, e.g. photos/tails-portrait.jpg -->
+            <div class="photo-placeholder" style="height:280px; background:var(--cream-dark);">
+              Photo of Tails coming soon
+            </div>
+          </div>
+          <div class="dog-card-body">
+            <p class="dog-card-meta">July 9, 2011 — October 22, 2024 · 13 years</p>
+            <h3>Tails</h3>
+            <p>Neutered male Pomeranian. The original good boy. The one this whole domain
+               is named after. He lived a full, joyful 13 years.</p>
+            <a href="tails.html" class="btn btn-tails" style="margin-top:1rem;">His Story →</a>
+          </div>
+        </div>
+
+        <!-- DORY CARD -->
+        <div class="dog-card dog-card--dory fade-in">
+          <div class="dog-card-photo">
+            <div class="photo-placeholder" style="height:280px; background:var(--cream-dark);">
+              Photo of Dory coming soon
+            </div>
+          </div>
+          <div class="dog-card-body">
+            <p class="dog-card-meta">Born October 16, 2015 · Spayed female</p>
+            <h3>Dory</h3>
+            <p>Spayed female Pomeranian. Carrying on the Pom spirit with energy, attitude,
+               and an unshakeable belief that she runs the house.</p>
+            <a href="dory.html" class="btn btn-primary" style="margin-top:1rem;">Her Story →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- RECENT STORIES PREVIEW -->
+  <section class="section--tight">
+    <div class="container">
+      <p class="section-label">Latest</p>
+      <h2 class="fade-in" style="margin-bottom:var(--gap-md);">Recent stories</h2>
+      <p class="text-mid fade-in" style="margin-bottom:var(--gap-md);">
+        Stories and memories live on the <a href="stories.html">Stories page</a>.
+        Add your first post there — this section can pull the three most recent entries
+        once you start writing.
+      </p>
+      <a href="stories.html" class="btn btn-secondary fade-in">View all stories →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Tails &amp; Dory &mdash; A Pomeranian life, remembered and lived.</p>
+    <p>Tails: July 9, 2011 – October 22, 2024 &nbsp;·&nbsp; Dory: born October 16, 2015</p>
+  </footer>
+
+  <!-- LIGHTBOX (present on all pages) -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "tails-and-dory-cdk",
+  "version": "0.1.0",
+  "bin": {
+    "tails-and-dory": "bin/tails-and-dory.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "aws-cdk": "^2",
+    "ts-node": "^10",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2",
+    "constructs": "^10"
+  }
+}

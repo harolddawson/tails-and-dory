@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dory — Pomeranian, born October 16, 2015</title>
+  <meta name="description" content="Meet Dory, a spayed female Pomeranian born October 16, 2015." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="nav-logo" href="index.html">Tails <span>&amp;</span> Dory</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tails.html">Tails</a></li>
+        <li><a href="dory.html">Dory</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="photos.html">Photos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PROFILE HERO -->
+  <header class="profile-hero">
+    <div class="container">
+      <div class="profile-hero-inner">
+
+        <div class="profile-photo">
+          <!-- Replace with: <img src="photos/dory-hero.jpg" alt="Dory the Pomeranian" /> -->
+          <span>Photo of Dory</span>
+        </div>
+
+        <div>
+          <p class="section-label">Meet Dory</p>
+          <h1>Dory</h1>
+          <p class="italic text-mid" style="font-family:var(--font-display); font-size:1.3rem; margin-top:0.5rem;">
+            The current keeper of the Pom spirit.
+          </p>
+
+          <ul class="profile-meta">
+            <li><span class="label">Born</span>        <span>October 16, 2015</span></li>
+            <li><span class="label">Age</span>         <span id="dory-age">Loading…</span></li>
+            <li><span class="label">Breed</span>       <span>Pomeranian</span></li>
+            <li><span class="label">Sex</span>         <span>Spayed female</span></li>
+            <li><span class="label">In dog years</span><span>≈ 57–60 human years</span></li>
+          </ul>
+
+          <a href="photos.html?dog=dory" class="btn btn-primary">See her photos →</a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- HER STORY -->
+  <section class="section">
+    <div class="container" style="max-width:720px;">
+
+      <p class="section-label">Her story</p>
+      <h2 class="fade-in">About Dory</h2>
+
+      <div class="fade-in" style="margin-top:1.5rem;">
+        <!-- ✏️ FILL IN: Write Dory's story here. Replace the placeholder paragraphs below. -->
+        <p>
+          Dory joined the family on [date — fill in]. A spayed female Pomeranian with
+          opinions about everything, she arrived with the full expectation that the
+          household would revolve around her. She was not wrong.
+        </p>
+        <p>
+          She's been keeping Tails' memory alive in her own way — by being exactly the
+          kind of small, fluffy, relentless personality that Pomeranians are known for.
+          [Add your memories and stories here.]
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY (Dory) -->
+  <section class="section--tight" style="background:var(--cream-dark);">
+    <div class="container">
+      <p class="section-label">Photos</p>
+      <h2 class="fade-in" style="margin-bottom:var(--gap-md);">Dory in pictures</h2>
+
+      <div class="photo-grid">
+        <!--
+          For each photo:
+          <div class="photo-grid-item" data-lightbox="photos/dory-photo-01.jpg">
+            <img src="photos/dory-photo-01.jpg" alt="Dory — description" loading="lazy" />
+          </div>
+        -->
+        <div class="photo-grid-item">
+          <div class="photo-placeholder">Add photo 1</div>
+        </div>
+        <div class="photo-grid-item">
+          <div class="photo-placeholder">Add photo 2</div>
+        </div>
+        <div class="photo-grid-item">
+          <div class="photo-placeholder">Add photo 3</div>
+        </div>
+        <div class="photo-grid-item">
+          <div class="photo-placeholder">Add photo 4</div>
+        </div>
+        <div class="photo-grid-item">
+          <div class="photo-placeholder">Add photo 5</div>
+        </div>
+        <div class="photo-grid-item">
+          <div class="photo-placeholder">Add photo 6</div>
+        </div>
+      </div>
+
+      <div style="margin-top:var(--gap-md);">
+        <a href="photos.html?dog=dory" class="btn btn-primary fade-in">See all of Dory's photos →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Tails &amp; Dory &mdash; A Pomeranian life, remembered and lived.</p>
+    <p>Tails: July 9, 2011 – October 22, 2024 &nbsp;·&nbsp; Dory: born October 16, 2015</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Live age calculator for Dory
+    (function () {
+      const born = new Date('2015-10-16');
+      const now  = new Date();
+      const msPerYear = 365.25 * 24 * 60 * 60 * 1000;
+      const years  = Math.floor((now - born) / msPerYear);
+      const months = Math.floor(((now - born) % msPerYear) / (msPerYear / 12));
+      document.getElementById('dory-age').textContent =
+        years + ' years, ' + months + ' month' + (months !== 1 ? 's' : '');
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photos — Tails &amp; Dory</title>
+  <meta name="description" content="Photo gallery for Tails and Dory, two Pomeranians." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Masonry-ish feel: vary aspect ratios */
+    .photo-grid-item:nth-child(3n+1) { aspect-ratio: 4/3; }
+    .photo-grid-item:nth-child(3n+2) { aspect-ratio: 1/1; }
+    .photo-grid-item:nth-child(3n)   { aspect-ratio: 3/4; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a class="nav-logo" href="index.html">Tails <span>&amp;</span> Dory</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tails.html">Tails</a></li>
+        <li><a href="dory.html">Dory</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="photos.html">Photos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header style="background:var(--cream-dark); padding:var(--gap-lg) 0 var(--gap-md); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <p class="section-label">The archive</p>
+      <h1 style="font-size:clamp(2rem,5vw,3.5rem);">Photos</h1>
+      <p class="text-mid italic" style="font-family:var(--font-display); font-size:1.2rem; margin-top:0.75rem; max-width:520px;">
+        Every photo a moment worth keeping.
+      </p>
+    </div>
+  </header>
+
+  <!-- FILTER TABS -->
+  <div style="background:var(--warm-white); border-bottom:1px solid var(--border); position:sticky; top:57px; z-index:50;">
+    <div class="container" style="display:flex; gap:0.25rem; padding-top:0.75rem; padding-bottom:0.75rem; overflow-x:auto;">
+      <button class="btn btn-primary filter-btn" data-filter="all"   style="padding:0.5rem 1.25rem; font-size:0.78rem;">All</button>
+      <button class="btn btn-secondary filter-btn" data-filter="tails" style="padding:0.5rem 1.25rem; font-size:0.78rem;">Tails</button>
+      <button class="btn btn-secondary filter-btn" data-filter="dory"  style="padding:0.5rem 1.25rem; font-size:0.78rem;">Dory</button>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="section">
+    <div class="container">
+      <div class="photo-grid" id="photo-grid">
+
+        <!--
+        ══════════════════════════════════════════════════════
+        HOW TO ADD PHOTOS:
+
+        1. Upload your image to the photos/ folder in S3
+           (alongside index.html, tails.html, etc.)
+
+        2. Add an item like this:
+           <div class="photo-grid-item" data-dog="tails" data-lightbox="photos/filename.jpg">
+             <img src="photos/filename.jpg" alt="Tails — brief description" loading="lazy" />
+           </div>
+
+        3. data-dog="tails" | "dory" controls the filter tabs.
+        4. data-lightbox="..." opens the full image on click.
+        5. Add as many as you like — the grid handles layout automatically.
+        ══════════════════════════════════════════════════════
+        -->
+
+        <!-- TAILS PLACEHOLDERS -->
+        <div class="photo-grid-item" data-dog="tails">
+          <div class="photo-placeholder">Tails — photo 1</div>
+        </div>
+        <div class="photo-grid-item" data-dog="tails">
+          <div class="photo-placeholder">Tails — photo 2</div>
+        </div>
+        <div class="photo-grid-item" data-dog="tails">
+          <div class="photo-placeholder">Tails — photo 3</div>
+        </div>
+        <div class="photo-grid-item" data-dog="tails">
+          <div class="photo-placeholder">Tails — photo 4</div>
+        </div>
+
+        <!-- DORY PLACEHOLDERS -->
+        <div class="photo-grid-item" data-dog="dory">
+          <div class="photo-placeholder">Dory — photo 1</div>
+        </div>
+        <div class="photo-grid-item" data-dog="dory">
+          <div class="photo-placeholder">Dory — photo 2</div>
+        </div>
+        <div class="photo-grid-item" data-dog="dory">
+          <div class="photo-placeholder">Dory — photo 3</div>
+        </div>
+        <div class="photo-grid-item" data-dog="dory">
+          <div class="photo-placeholder">Dory — photo 4</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Tails &amp; Dory &mdash; A Pomeranian life, remembered and lived.</p>
+    <p>Tails: July 9, 2011 – October 22, 2024 &nbsp;·&nbsp; Dory: born October 16, 2015</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Filter tabs
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const photos     = document.querySelectorAll('#photo-grid .photo-grid-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('btn-primary');
+          b.classList.add('btn-secondary');
+        });
+        btn.classList.remove('btn-secondary');
+        btn.classList.add('btn-primary');
+
+        const f = btn.dataset.filter;
+        photos.forEach(p => {
+          p.style.display = (f === 'all' || p.dataset.dog === f) ? '' : 'none';
+        });
+      });
+    });
+
+    // On page load, if ?dog=tails or ?dog=dory in URL, pre-filter
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const dog    = params.get('dog');
+      if (dog) {
+        const btn = document.querySelector('[data-filter="' + dog + '"]');
+        if (btn) btn.click();
+      }
+    })();
+  </script>
+</body>
+</html>
