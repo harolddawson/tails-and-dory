@@ -141,3 +141,17 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# CDK
+cdk/cdk.out
+cdk/cdk.context.json
+cdk/dist
+
+# macOS
+.DS_Store
+
+# JetBrains IDE
+.idea/
+
+# Photos live in S3, not git
+src/photos/
