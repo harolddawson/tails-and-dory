@@ -155,3 +155,4 @@ cdk/dist
 
 # Photos live in S3, not git
 src/photos/
+.DS_Store
